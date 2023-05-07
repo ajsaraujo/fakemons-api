@@ -1,7 +1,9 @@
-from flask import Flask 
+from flask import Flask, request 
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/descriptions')
 def index():
-  return 'Hello, world!'
+  count = int(request.args.get('count'))
+
+  return ['Random description' for i in range(count)]
