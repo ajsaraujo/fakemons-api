@@ -13,4 +13,7 @@ def get_real_descriptions():
   count = int(request.args.get('count'))
   return random.sample(real_descriptions, count)
 
-
+@app.route('/descriptions/fake')
+def get_fake_descriptions():
+  count = int(request.args.get('count'))
+  return []
